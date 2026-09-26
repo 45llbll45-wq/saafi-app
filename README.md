@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# صافي | Saafi - منصة وحاسبة أرباح التجارة الإلكترونية
 
-## Getting Started
+منصة ويب متكاملة، سريعة، وموجهة لرواد وأصحاب المتاجر الإلكترونية في العالم العربي (سلة، زد، شوبيفاي، ووكومرس) لحساب صافي الربح الحقيقي، تسعير المنتجات، نقطة التعادل، محاكاة الخصومات، وتحليل عائد الإعلانات (ROAS).
 
-First, run the development server:
+---
+
+## 🌟 الميزات الرئيسية
+
+1. **حاسبة صافي الأرباح الشاملة (`/profit-calculator`):**
+   - حساب فوري وتفاعلي لصافي الربح، هامش الربح %، تكلفة المنتج من السعر، رسوم بوابات الدفع (مدى، فيزا، تابي/تمارا)، تكاليف الشحن والتسويق، وسعر التعادل.
+   - محاكي الخصومات التفاعلي (0% إلى 30%) مع توضيح الفارق المالي وحالات الخسارة/الربح.
+   - حفظ آخر مدخلات تلقائيًا في المتصفح (`localStorage`) مع إمكانية نسخ ملخص التحليل بضغطة زر.
+
+2. **حاسبة تسعير المنتج وهامش الربح المستهدف (`/selling-price-calculator`):**
+   - تحديد سعر البيع الدقيق الذي يضمن تحقيق هامش الربح المطلوب بعد خصم كافة الرسوم.
+   - حساب نسبة المارك أب (Markup) ومقارنتها بهامش الربح.
+
+3. **حاسبة نقطة التعادل (`/break-even-calculator`):**
+   - حساب عدد الطلبات والإيرادات الشهرية المطلوبة لتغطية التكاليف الثابتة والمتغيرة وبدء جني الأرباح.
+
+4. **حاسبة تأثير الخصومات والعروض الترويجية (`/discount-calculator`):**
+   - معرفة نسبة الزيادة الإلزامية في المبيعات لتعويض أي خصم وتجنب تآكل الأرباح.
+
+5. **حاسبة عائد الإعلانات وكفاءة التسويق (`/marketing-roi-calculator`):**
+   - حساب ROAS، CPA، AOV، وصافي الربح الحقيقي بعد البضاعة والشحن، مع تحديد Break-Even ROAS.
+
+6. **مدونة متكاملة تضم 10 مقالات أصلية عالية القيمة (`/blog`):**
+   - شروحات عملية عميقة بدون حشو SEO وموجهة لرواد الأعمال العرب.
+   - مزودة بـ Schema.org Article وجداول محتويات تفاعلية وربط داخلي بالأدوات.
+
+7. **تهيئة قصوى لمحركات البحث (SEO):**
+   - دعم كامل لـ RTL واللغة العربية، خريطة موقع ديناميكية (`/sitemap.xml`)، ملف (`/robots.txt`)، و JSON-LD Structured Data.
+
+8. **جاهزية كاملة لـ Google AdSense:**
+   - مساحات إعلانية متجاوبة ومنظمة (`AdSlot`)، مع صفحات قانونية متكاملة (`/about`, `/contact`, `/privacy-policy`, `/terms`).
+
+---
+
+## 🚀 التشغيل المحلي (Local Development)
 
 ```bash
+# الانتقال لمجلد المشروع
+cd saafi-app
+
+# تثبيت الحزم (إن لم تكن مثبتة)
+npm install
+
+# تشغيل بيئة التطوير المحلية
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+افتح المتصفح على: `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏗️ بناء نسخة الإنتاج (Production Build)
 
-## Learn More
+```bash
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 النشر على الإنترنت (Deployment)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 1. النشر على Vercel (موصى به):
+1. ارفع الكود إلى مستودع GitHub أو GitLab.
+2. سجّل الدخول إلى [Vercel](https://vercel.com) واضغط **Add New Project**.
+3. اختر المستودع وسيقوم Vercel بضبط إعدادات Next.js تلقائيًا.
+4. اضغط **Deploy**.
 
-## Deploy on Vercel
+### 2. النشر على Netlify أو Cloudflare Pages:
+- Build Command: `npm run build`
+- Output Directory: `.next`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⚙️ إعدادات المتغيرات البيئية (Environment Variables)
+
+أنشئ ملف `.env.local` في المجلد الرئيسي إذا رغبت في تفعيل Google AdSense أو خدمات إضافية:
+
+```env
+# معرف عميل Google AdSense (اختياري)
+NEXT_PUBLIC_ADSENSE_CLIENT_ID=ca-pub-xxxxxxxxxxxxxxxx
+
+# معرف Google Analytics (اختياري)
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+```
+
+---
+
+## 🔗 ربط الدومين ومحركات البحث
+
+1. **ربط الدومين الخاص (Custom Domain):**
+   - من لوحة تحكم الاستضافة (Vercel / Cloudflare)، أضف نطاقك (مثل `saafi.app`) وقم بتوجيه سجلات `A` و `CNAME` لدى مزود النطاق.
+2. **ربط Google Search Console:**
+   - أضف موقعك في Search Console وقدم رابط خريطة الموقع: `https://your-domain.com/sitemap.xml`.
+3. **Google Analytics & AdSense:**
+   - ضع المعرفات الخاصة بك في ملف `.env.local` أو في إعدادات النشر على المنصة.
+
+---
+
+## 📂 هيكل المشروع
+
+```
+src/
+├── app/                  # صفحات ومسارات التطبيق (Next.js App Router)
+├── components/           # مكونات واجهة المستخدم والحاسبات والإعلانات
+│   ├── calculators/      # مكونات الحاسبات الـ 5 ومحاكي الخصم والرسوم
+│   ├── blog/             # بطاقات المقالات وجدول المحتويات
+│   ├── layout/           # رأس وتذييل الصفحة والقوائم
+│   ├── ads/              # مساحات إعلانات AdSense
+│   ├── seo/              # Schema.org و Breadcrumbs
+│   └── ui/               # حقول الإدخال وبطاقات الإحصائيات
+├── data/                 # نصوص المقالات الـ 10 وبيانات الأدوات
+└── lib/                  # محرك الحسابات المالية والتنسيقات و SEO
+```
+
+---
+
+## 📄 الترخيص
+
+جميع الحقوق محفوظة © منصة صافي | Saafi.
