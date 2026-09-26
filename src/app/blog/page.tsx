@@ -1,11 +1,10 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { BLOG_POSTS } from '@/data/blog-posts';
-import { BlogCard } from '@/components/blog/BlogCard';
+import { BlogIndexClient } from '@/components/blog/BlogIndexClient';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { BreadcrumbSchema } from '@/components/seo/SchemaOrg';
 import { AdSlot } from '@/components/ads/AdSlot';
-import { BookOpen, Sparkles, TrendingUp, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'مدونة صافي | أدلة ونصائح مالية وحساب الأرباح للمتاجر الإلكترونية',
@@ -26,10 +25,13 @@ export default function BlogIndexPage() {
 
       {/* رأس المدونة */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
+        <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#FAF8FF] border border-[#B2CBF4] text-[#4B6AD9] text-xs font-bold shadow-xs">
+          <span>أدلة ومقالات مالية عملية ومحدثة</span>
+        </div>
         <h1 className="text-3xl sm:text-5xl font-black text-[#141D30] tracking-tight">
           مدونة <span className="text-[#4B6AD9]">صافي</span>
         </h1>
-        <p className="text-sm md:text-base text-slate-600 leading-relaxed">
+        <p className="text-sm md:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
           دليلك المالي الشامل لفهم لغة الأرقام، تسعير المنتجات باحتراف، وزيادة أرباح متجرك في سلة وزد وشوبيفاي بعيدًا عن الأوهام التسويقية.
         </p>
       </div>
@@ -37,12 +39,8 @@ export default function BlogIndexPage() {
       {/* إعلان علوي */}
       <AdSlot position="top-banner" slotId="blog-index-top" />
 
-      {/* شبكة المقالات الـ 10 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {BLOG_POSTS.map((post) => (
-          <BlogCard key={post.slug} post={post} />
-        ))}
-      </div>
+      {/* قائمة المقالات التفاعلية والبحث والتصنيفات */}
+      <BlogIndexClient posts={BLOG_POSTS} />
 
       {/* إعلان سفلي */}
       <AdSlot position="bottom-banner" slotId="blog-index-bottom" />
